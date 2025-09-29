@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   return (
@@ -8,6 +9,7 @@ export default function Navbar() {
         <nav className="flex gap-4 items-center">
           <Link href="/projects"><a className="text-[color:var(--muted)]">Projects</a></Link>
           <a href="#contact" className="text-[color:var(--muted)]">Contact</a>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

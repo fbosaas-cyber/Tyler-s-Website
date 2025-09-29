@@ -1,0 +1,16 @@
+[
+  {
+    "id": "proj-analytics",
+    "title": "Realtime Analytics Dashboard",
+    "description": "A scalable analytics dashboard with real-time charts and role-based access.",
+    "tech": ["Next.js", "WebSockets", "Postgres"],
+    "url": "#"
+  },
+  {
+    "id": "proj-store",
+    "title": "Performance E‑commerce Store",
+    "description": "Headless storefront focusing on Core Web Vitals and accessibility.",
+    "tech": ["React", "Stripe", "Vercel"],
+    "url": "#"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "tyler-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "export": "next export",
+    "deploy:ghpages": "npm run build && npm run export && npx gh-pages -d out",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "framer-motion": "^10.12.16",
+    "next": "latest",
+    "postcss": "^8.4.24",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^3.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.28",
+    "typescript": "^5.6.4"
+  }
+}

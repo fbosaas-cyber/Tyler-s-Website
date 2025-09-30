@@ -1,4 +1,4 @@
-name: Vercel Deploy
+npm run devname: Vercel Deploy
 
 on:
   push:

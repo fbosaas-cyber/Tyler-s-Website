@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Tyler Robinson</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #0b1220;
+            --muted: #94a3b8;
+            --text: #ffffff;
+        }
+        
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --muted: #475569;
+            --text: #0f172a;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background: var(--surface);
+            padding: 1rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--text);
+        }
+        
+        .logo {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .theme-toggle {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--muted);
+            border-radius: 0.25rem;
+            background: transparent;
+            color: var(--text);
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 5rem 0;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .subtitle {
+            color: var(--muted);
+            margin: 0.5rem 0 2rem;
+        }
+        
+        .project-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .project-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .project-card h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .project-card p {
+            color: var(--muted);
+            margin: 0.75rem 0;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Tyler Robinson</a>
+            <div class="nav-links">
+                <a href="/projects.html">Projects</a>
+                <a href="/#contact">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Projects</h1>
+        <p class="subtitle">A curated list of selected work. Click a project to learn more.</p>
+
+        <div class="project-grid">
+            <article class="project-card">
+                <h2>Analytics Dashboard</h2>
+                <p>A scalable analytics dashboard with real-time updates and role-based access. Features live data visualization and customizable widgets.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">WebSocket</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">ChartJS</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h2>E-commerce Store</h2>
+                <p>Headless storefront focusing on Core Web Vitals and accessibility. Includes cart persistence, fast checkout flow, and product search.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Algolia</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h2>Task Management API</h2>
+                <p>RESTful API for task and project management with real-time notifications and team collaboration features.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Socket.io</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h2>Portfolio Site</h2>
+                <p>A modern portfolio with dark/light mode, responsive design, and optimized performance scores.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Tyler Robinson</p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+</body>
+</html>

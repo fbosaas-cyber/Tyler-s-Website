@@ -1,4 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next' // <--- THIS LINE IS NEEDED
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
 import nodemailer from 'nodemailer'
 
 type ContactFormData = {
@@ -50,4 +55,5 @@ ${message}
     console.error('Error sending email:', error)
     res.status(500).json({ message: 'Failed to send email' })
   }
+}
 }

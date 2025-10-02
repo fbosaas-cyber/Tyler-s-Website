@@ -1,25 +1,14 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Tyler Robinson — Software Engineer</title>
-        <meta name="description" content="Tyler Robinson — building fast, accessible, and delightful web experiences." />
-      </Head>
-
-      <Navbar />
-
-      <main className="container py-20">
-        <section className="grid gap-10 md:grid-cols-2 items-center">
-          <div>
-            <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="text-4xl md:text-6xl font-bold">
-              Tyler Robinson
-            </motion.h1>
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      height: '100vh' 
+    }}>
+      <h1>TEST</h1>
+    </div>
+  )
             <p className="mt-4 text-lg text-[color:var(--muted)] max-w-xl">
               I build dynamic, performant web apps with a focus on UX, accessibility, and modern tooling.
             </p>

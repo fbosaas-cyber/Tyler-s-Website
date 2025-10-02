@@ -44,3 +44,33 @@ Deploying to Vercel
      - `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` (find these on your Vercel project settings)
    - Add those secrets in GitHub: repo Settings → Secrets → Actions.
 
+## Deployment Workflow
+
+This repository has two deployment options configured via GitHub Actions:
+
+### GitHub Pages Deployment (`.github/workflows/deploy.yml`)
+- Triggers automatically on push to `main` or `master` branch
+- Builds the Next.js app and exports static files to `out/` directory
+- Deploys to GitHub Pages at `https://fbosaas-cyber.github.io/Tyler-s-Website/`
+- No additional secrets required (uses `GITHUB_TOKEN`)
+
+### Vercel Deployment (`.github/workflows/vercel-deploy.yml`)
+- Triggers automatically on push to `main` branch or manual workflow dispatch
+- Deploys directly to Vercel
+- Requires repository secrets: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`
+
+### How to Push Changes
+
+1. Make your changes in VS Code or any editor
+2. Stage and commit your changes:
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   ```
+3. Push to your branch:
+   ```bash
+   git push origin your-branch-name
+   ```
+4. If on `main` branch, GitHub Actions will automatically deploy to both GitHub Pages and Vercel (if secrets are configured)
+5. For feature branches, create a Pull Request and merge to `main` to trigger deployment
+

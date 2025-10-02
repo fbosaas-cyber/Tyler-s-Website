@@ -9,7 +9,7 @@ export default function Navbar() {
         <nav className="flex gap-4 items-center">
           <Link href="/projects" className="text-[color:var(--muted)]">Projects</Link>
           <Link href="/career" className="text-[color:var(--muted)]">Career</Link>
-          <a href="#contact" className="text-[color:var(--muted)]">Contact</a>
+          <Link href="/contact" className="text-[color:var(--muted)]">Contact</Link>
           <ThemeToggle />
         </nav>
       </div>

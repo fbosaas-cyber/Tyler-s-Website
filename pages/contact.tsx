@@ -4,8 +4,14 @@ import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 
 export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [formData, setFormData] = useState({
+  type Status = 'idle' | 'sending' | 'success' | 'error'
+  type FormData = {
+    name: string
+    email: string
+    message: string
+  }
+  const [status, setStatus] = useState('idle' as Status)
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
@@ -54,7 +60,7 @@ export default function Contact() {
                 required
                 className="w-full px-4 py-2 rounded border bg-[color:var(--surface)] border-[color:var(--muted)]"
                 value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                onChange={(e) => setFormData((prev: FormData) => ({ ...prev, name: e.target.value }))}
               />
             </div>
 
@@ -68,7 +74,7 @@ export default function Contact() {
                 required
                 className="w-full px-4 py-2 rounded border bg-[color:var(--surface)] border-[color:var(--muted)]"
                 value={formData.email}
-                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                onChange={(e) => setFormData((prev: FormData) => ({ ...prev, email: e.target.value }))}
               />
             </div>
 
@@ -82,7 +88,7 @@ export default function Contact() {
                 rows={4}
                 className="w-full px-4 py-2 rounded border bg-[color:var(--surface)] border-[color:var(--muted)]"
                 value={formData.message}
-                onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                onChange={(e) => setFormData((prev: FormData) => ({ ...prev, message: e.target.value }))}
               />
             </div>
 

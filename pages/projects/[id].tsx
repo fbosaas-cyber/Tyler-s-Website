@@ -24,7 +24,7 @@ export default function ProjectPage({ project }: any) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const fs = await import('fs')
   const path = await import('path')
   const file = path.join(process.cwd(), 'data', 'projects.json')
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({ params }: any) => {
   const fs = await import('fs')
   const path = await import('path')
   const file = path.join(process.cwd(), 'data', 'projects.json')

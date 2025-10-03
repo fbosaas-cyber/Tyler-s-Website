@@ -8,29 +8,33 @@ export default function Home() {
         <title>Tyler Robinson — Executive</title>
       </Head>
 
-      <main style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.04), transparent)' }}>
+      <main style={{ 
+        background: 'linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%)',
+        minHeight: '90vh'
+      }}>
         <section className="container" style={{ padding: '3.5rem 1.5rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
             <div>
-              <h1 style={{ fontSize: '2.25rem', margin: 0, lineHeight: 1.05 }}>
+              <h1 style={{ 
+                fontSize: '2.5rem', 
+                margin: 0, 
+                lineHeight: 1.1,
+                background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
                 Tyler Robinson
               </h1>
-              <p className="muted" style={{ marginTop: '1rem', fontSize: '1.05rem', maxWidth: '60ch' }}>
+              <p className="muted" style={{ marginTop: '1.25rem', fontSize: '1.1rem', maxWidth: '60ch', lineHeight: 1.6 }}>
                 Executive-level sales and technical leader focused on OEM and enterprise partnerships. I combine
                 data-informed strategy with consultative selling to deliver measurable outcomes and build long-term client value.
               </p>
 
-              <div style={{ marginTop: '1.25rem' }}>
+              <div style={{ marginTop: '1.5rem' }}>
                 <Link href="/career">
-                  <a style={{
-                    display: 'inline-block',
-                    padding: '0.6rem 1rem',
-                    background: 'var(--primary)',
-                    color: 'var(--text)',
-                    borderRadius: 8,
-                    fontWeight: 700,
-                    textDecoration: 'none'
-                  }}>View career →</a>
+                  <a className="btn btn-primary">
+                    View career →
+                  </a>
                 </Link>
               </div>
             </div>

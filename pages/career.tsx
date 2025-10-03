@@ -22,8 +22,7 @@ export default function Career({ entries }: { entries: CareerEntry[] }) {
       </Head>
 
       <main className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
-        <section className="career-hero">
-          <img src="/profile-photo.PNG" alt="Tyler Robinson" className="career-portrait" />
+        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
           <div>
             <h1 style={{ margin: 0, fontSize: '1.75rem' }}>Tyler Robinson</h1>
             <p className="muted" style={{ marginTop: '0.5rem' }}>
@@ -34,6 +33,15 @@ export default function Career({ entries }: { entries: CareerEntry[] }) {
               <span className="tag">Sales</span>
               <span className="tag">OEM</span>
               <span className="tag">AI</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', maxWidth: 520 }}>
+              <div style={{ position: 'absolute', inset: 0, transform: 'translate(12px,12px)', background: 'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(124,58,237,0.06))', borderRadius: 12 }} />
+              <div style={{ borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
+                <img src="/profile-photo.PNG" alt="Tyler Robinson" style={{ width: '100%', height: 380, objectFit: 'cover', display: 'block' }} />
+              </div>
             </div>
           </div>
         </section>

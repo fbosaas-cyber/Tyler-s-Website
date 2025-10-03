@@ -10,9 +10,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-custom">
+    <>
+      <div className="gradient-container" aria-hidden="true" />
       <Navbar />
       <Component {...pageProps} />
-    </div>
+    </>
   )
 }

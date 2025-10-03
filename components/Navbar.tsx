@@ -1,21 +1,32 @@
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
-    <header style={{ 
-        borderBottom: '1px solid var(--card-border)', 
-        background: 'var(--nav)',
-        boxShadow: 'var(--card-shadow)'
-      }}>
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0' }}>
-        <div style={{ fontWeight: 700 }}>
-          <Link href="/" className="nav-link" style={{ color: 'var(--text)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
+    <header className="navbar">
+      <div className="container nav-container">
+        <div className="nav-brand">
+          <Link href="/" className="nav-link home-link">
             Tyler Robinson
           </Link>
         </div>
 
-        <nav>
-          <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
+        <button 
+          className="mobile-menu-button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
+        <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
+          <ul className="nav-links">
             <li><Link href="/career" className="nav-link">Career</Link></li>
             <li><Link href="/about" className="nav-link">About</Link></li>
             <li><Link href="/contact" className="nav-link">Contact</Link></li>

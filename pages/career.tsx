@@ -11,6 +11,7 @@ type CareerEntry = {
   location?: string
   summary?: string
   highlights?: string[]
+  skills?: string[]
 }
 
 export default function Career({ entries }: { entries: CareerEntry[] }) {
@@ -19,32 +20,52 @@ export default function Career({ entries }: { entries: CareerEntry[] }) {
       <Head>
         <title>Career — Tyler Robinson</title>
       </Head>
-      <main style={{ padding: '4rem', maxWidth: 900, margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Career</h1>
-        <p style={{ color: '#6b7280', marginBottom: '2rem' }}>
-          Professional experience and selected accomplishments.
-        </p>
 
-        <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <main className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <section className="career-hero">
+          <img src="/profile-photo.PNG" alt="Tyler Robinson" className="career-portrait" />
+          <div>
+            <h1 style={{ margin: 0, fontSize: '1.75rem' }}>Tyler Robinson</h1>
+            <p className="muted" style={{ marginTop: '0.5rem' }}>
+              Executive-level sales and technical leader focused on OEM and enterprise partnerships. I combine
+              data-informed strategy with consultative selling to deliver measurable outcomes and build long-term client value.
+            </p>
+            <div style={{ marginTop: '0.75rem' }}>
+              <span className="tag">Sales</span>
+              <span className="tag">OEM</span>
+              <span className="tag">AI</span>
+            </div>
+          </div>
+        </section>
+
+        <div style={{ marginTop: '2rem' }} className="career-grid">
           {entries.map((e) => (
-            <article key={e.id} style={{ padding: '1.25rem', borderRadius: 8, border: '1px solid #e5e7eb' }}>
+            <article key={e.id} className="career-card">
               <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <h2 style={{ margin: 0, fontSize: '1.125rem' }}>{e.role}</h2>
-                  <div style={{ color: '#374151', fontWeight: 600 }}>{e.company}</div>
+                  <div className="career-role">{e.role}</div>
+                  <div className="career-company">{e.company}</div>
                 </div>
-                <div style={{ textAlign: 'right', color: '#6b7280' }}>
+                <div style={{ textAlign: 'right' }} className="muted">
                   <div>{formatDateRange(e.startDate, e.endDate)}</div>
                   {e.location && <div style={{ fontSize: '0.9rem' }}>{e.location}</div>}
                 </div>
               </header>
 
-              {e.summary && <p style={{ marginTop: '0.75rem', color: '#374151' }}>{e.summary}</p>}
+              {e.summary && <p style={{ marginTop: '0.75rem' }}>{e.summary}</p>}
+
+              {e.skills && e.skills.length > 0 && (
+                <div style={{ marginTop: '0.6rem' }}>
+                  {e.skills.map((s) => (
+                    <span key={s} className="tag">{s}</span>
+                  ))}
+                </div>
+              )}
 
               {e.highlights && e.highlights.length > 0 && (
-                <ul style={{ marginTop: '0.75rem', paddingLeft: '1.25rem' }}>
+                <ul className="highlight-list">
                   {e.highlights.map((h, i) => (
-                    <li key={i} style={{ marginBottom: '0.5rem' }}>{h}</li>
+                    <li key={i} className="muted" style={{ marginBottom: '0.5rem' }}>{h}</li>
                   ))}
                 </ul>
               )}

@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root[data-theme="dark"] {
-  --bg: #0f172a;
-  --surface: #0b1220;
-  --muted: #94a3b8;
-  --text: #ffffff;
-  --primary: #38bdf8;
+  --bg: #071126;
+  --surface: #071426;
+  --muted: #9aa9bd;
+  --text: #e6f0ff;
+  --primary: #00d1ff; /* tech cyan */
+  --accent-2: #7c3aed; /* purple accent */
+  --card-border: rgba(255,255,255,0.04);
 }
 
 :root[data-theme="light"] {
@@ -15,7 +17,9 @@
   --surface: #ffffff;
   --muted: #475569;
   --text: #0f172a;
-  --primary: #0284c7;
+  --primary: #0ea5a8; /* teal */
+  --accent-2: #7c3aed;
+  --card-border: rgba(2,6,23,0.04);
 }
 
 html, body, #__next {
@@ -30,3 +34,53 @@ body {
 .container {
   @apply max-w-5xl mx-auto px-6;
 }
+
+/* Career page styles */
+.career-hero {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.career-portrait {
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+.career-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border: 1px solid var(--card-border);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.career-role {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.career-company {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.muted { color: var(--muted); }
+
+.tag { 
+  display: inline-block; 
+  padding: 0.25rem 0.5rem; 
+  border-radius: 9999px; 
+  background: rgba(255,255,255,0.03); 
+  color: var(--text); 
+  font-size: 0.85rem; 
+  margin-right: 0.5rem;
+}
+
+.highlight-list { margin-top: 0.6rem; padding-left: 1.25rem; }
+
+.career-grid { display: grid; gap: 1rem; }
+

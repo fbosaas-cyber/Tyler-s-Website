@@ -162,7 +162,7 @@ html, body {
   .navbar-fixed nav ul li a {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--primary);
     text-decoration: none;
     padding: 0.5rem 0;
     transition: all 0.2s ease;
@@ -171,7 +171,7 @@ html, body {
   /* Active and hover states */
   .navbar-fixed nav ul li a:active,
   .navbar-fixed nav ul li a:hover {
-    color: var(--mobile-nav-active);
+    color: var(--primary-hover);
   }
 
   /* Custom separators */

@@ -1,196 +1,113 @@
-import fs from 'fs'
-import path from 'path'
-import Head from 'next/head'
+import { NextPage } from 'next';
+import Head from 'next/head';
+import { FaChartLine, FaIndustry, FaSearchDollar, FaUserTie, FaRobot } from 'react-icons/fa';
+import SuccessStoryCard from '../components/SuccessStoryCard';
+import SEO from '../components/SEO';
+import ReferenceCard from '../components/ReferenceCard';
 
-type CareerEntry = {
-  id: string
-  company: string
-  role: string
-  startDate: string
-  endDate: string
-  location?: string
-  summary?: string
-  highlights?: string[]
-  skills?: string[]
-}
+const successStories = [
+	{
+		icon: FaIndustry,
+		title: 'OEM Sales Success',
+		story: 'In my first 8 months at Contitech, I prospected 4 new clients, and will generate $7.1 million in sales in 2025.',
+		metric: '$7.1M in sales',
+		skills: ['Prospecting', 'Client Acquisition', 'Revenue Growth'],
+	},
+	{
+		icon: FaUserTie,
+		title: 'Leadership in Sales Growth',
+		story: 'Currently leading my team through prospecting efforts to grow sales by 20%.',
+		metric: '20% sales growth target',
+		skills: ['Leadership', 'Team Management', 'Strategic Planning'],
+	},
+	{
+		icon: FaSearchDollar,
+		title: 'Account Management Excellence',
+		story: 'Revitalized relationships with clients whose business had slowed, returning them to their original sales volume and growing top line revenue',
+		metric: 'Restored sales volumes',
+		skills: ['Account Management', 'Client Retention', 'Relationship Building'],
+	},
+	{
+		icon: FaRobot,
+		title: 'AI-Driven Solutions for Efficiency',
+		story: 'Developed AI-driven tools to automate reporting, saving 200+ hours annually.',
+		metric: '200+ hours saved annually',
+		skills: ['Artificial Intelligence', 'Automation', 'Efficiency Improvement'],
+	},
+	{
+		icon: FaSearchDollar,
+		title: 'First Intern to Complete a Full Sales Cycle',
+		story: 'At Hearst, I became the first intern to complete the entire sales cycle, from prospecting to closing, showcasing my ability to drive results and build client trust.',
+		metric: 'Full sales cycle completed',
+		skills: ['Sales Cycle Management', 'Client Trust', 'Closing Deals'],
+	},
+];
 
-type Education = {
-  school: string
-  degree: string
-  major?: string
-  startDate: string
-  endDate: string
-  activities?: string[]
-  description?: string
-  skills?: string[]
-  grade?: string
-  type?: string
-}
+// Updated resume-like experiences with rephrased content
+const experiences = [
+	{
+		company: 'Continental',
+		role: 'OEM Sales Manager',
+		description: 'Driving sales growth in the South USA region by upselling and prospecting ContiTech products, leveraging AI tools to enhance client engagement.',
+	},
+	{
+		company: 'Hearst',
+		role: 'Advertisement Sales Specialist',
+		description: 'Increased pipeline by $38,000, closed sales, authored a sales playbook, optimized CRM processes, and became the first intern to complete a full sales cycle.',
+	},
+];
 
-type Certification = {
-  name: string
-  issuer: string
-}
+export default function Career() {
+	return (
+		<>
+			<Head>
+				<title>Career — Tyler Robinson</title>
+			</Head>
 
-type Recommendation = {
-  author: string
-  position: string
-  date: string
-  relationship: string
-  text: string
-}
+			<main className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
+				<h1 className="section-title">Success Stories</h1>
+				<div className="career-grid">
+					{successStories.map((story, index) => (
+						<SuccessStoryCard
+							key={index}
+							icon={story.icon}
+							title={story.title}
+							story={story.story}
+							metric={story.metric}
+							skills={story.skills}
+						/>
+					))}
+				</div>
 
-export default function Career({ 
-  entries,
-  education,
-  certifications,
-  recommendations 
-}: { 
-  entries: CareerEntry[]
-  education: Education[]
-  certifications: Certification[]
-  recommendations: Recommendation[]
-}) {
-  return (
-    <>
-      <Head>
-        <title>Career — Tyler Robinson</title>
-      </Head>
+				<h2 className="section-title" style={{ marginTop: '3rem' }}>
+					Professional Experiences
+				</h2>
+				<div className="career-grid">
+					{experiences.map((experience, index) => (
+						<div key={index} className="career-card">
+							<h3 className="career-role">{experience.role}</h3>
+							<p className="career-company">{experience.company}</p>
+							<p className="muted">{experience.description}</p>
+						</div>
+					))}
+				</div>
 
-      <main className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
-        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
-          <div>
-            <h1 style={{ margin: 0, fontSize: '1.75rem' }}>Tyler Robinson</h1>
-            <p className="muted" style={{ marginTop: '0.5rem' }}>
-              Executive-level sales and technical leader focused on OEM and enterprise partnerships. I combine
-              data-informed strategy with consultative selling to deliver measurable outcomes and build long-term client value.
-            </p>
-            <div style={{ marginTop: '0.75rem' }}>
-              <span className="tag">Sales</span>
-              <span className="tag">OEM</span>
-              <span className="tag">AI</span>
-            </div>
-          </div>
+				<a href="/hidden/work-experiences" className="text-primary hover:underline" style={{ marginTop: '1rem', display: 'block' }}>
+					View Full Work Experiences
+				</a>
 
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative', width: '100%', maxWidth: 520 }}>
-              <div style={{ position: 'absolute', inset: 0, transform: 'translate(12px,12px)', background: 'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(124,58,237,0.06))', borderRadius: 12 }} />
-              <div style={{ borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
-                <img src="/profile-photo.PNG" alt="Tyler Robinson" style={{ width: '100%', height: 380, objectFit: 'cover', display: 'block' }} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <h2 className="section-title">Experience</h2>
-        <div className="career-grid">
-          {entries.map((e) => (
-            <article key={e.id} className="career-card">
-              <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div>
-                  <div className="career-role">{e.role}</div>
-                  <div className="career-company">{e.company}</div>
-                </div>
-                <div style={{ textAlign: 'right' }} className="muted">
-                  <div>{formatDateRange(e.startDate, e.endDate)}</div>
-                  {e.location && <div style={{ fontSize: '0.9rem' }}>{e.location}</div>}
-                </div>
-              </header>
-
-              {e.summary && <p style={{ marginTop: '0.75rem' }}>{e.summary}</p>}
-
-              {e.skills && e.skills.length > 0 && (
-                <div style={{ marginTop: '0.6rem' }}>
-                  {e.skills.map((s) => (
-                    <span key={s} className="tag">{s}</span>
-                  ))}
-                </div>
-              )}
-
-              {e.highlights && e.highlights.length > 0 && (
-                <ul className="highlight-list">
-                  {e.highlights.map((h, i) => (
-                    <li key={i} className="muted" style={{ marginBottom: '0.5rem' }}>{h}</li>
-                  ))}
-                </ul>
-              )}
-            </article>
-          ))}
-        </div>
-
-
-
-        {recommendations.length > 0 && (
-          <>
-            <h2 className="section-title" style={{ marginTop: '3rem' }}>Recommendations</h2>
-            <div className="career-grid">
-              {recommendations.map((rec, index) => (
-                <article key={index} className="career-card">
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem' }}>
-                    <div style={{ 
-                      width: '48px', 
-                      height: '48px', 
-                      borderRadius: '50%', 
-                      background: 'var(--primary)', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      color: 'var(--bg)',
-                      fontSize: '1.5rem',
-                      fontWeight: 'bold'
-                    }}>
-                      {rec.author[0]}
-                    </div>
-                    <div>
-                      <div className="career-role">{rec.author}</div>
-                      <div className="muted">{rec.position}</div>
-                    </div>
-                  </div>
-                  <p style={{ fontStyle: 'italic', color: 'var(--muted)' }}>{rec.text}</p>
-                  <div className="muted" style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
-                    {rec.date} • {rec.relationship}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </>
-        )}
-      </main>
-    </>
-  )
-}
-
-function formatDateRange(start: string, end: string) {
-  const s = formatYearMonth(start)
-  const e = end.toLowerCase() === 'present' ? 'Present' : formatYearMonth(end)
-  return `${s} — ${e}`
-}
-
-function formatYearMonth(ym: string) {
-  // expect yyyy-mm
-  const [y, m] = ym.split('-')
-  if (!y) return ym
-  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-  const mi = Number(m) - 1
-  return m ? `${monthNames[mi] ?? ''} ${y}` : y
-}
-
-export async function getStaticProps() {
-  const careerFile = path.join(process.cwd(), 'data', 'career.json')
-  const educationFile = path.join(process.cwd(), 'data', 'education.json')
-  
-  const careerRaw = fs.readFileSync(careerFile, 'utf-8')
-  const educationRaw = fs.readFileSync(educationFile, 'utf-8')
-  
-  const entries: CareerEntry[] = JSON.parse(careerRaw)
-  const { education, certifications, recommendations } = JSON.parse(educationRaw)
-  
-  return { 
-    props: { 
-      entries,
-      education,
-      certifications,
-      recommendations
-    } 
-  }
+				<h2 className="section-title" style={{ marginTop: '3rem' }}>
+					References
+				</h2>
+				<div className="career-grid">
+					<ReferenceCard
+						name="Diana Moffett"
+						title="General Manager"
+						company="Saratoga Country Club"
+						quote="It's my absolute pleasure to recommend Tyler Robinson. Tyler and I worked together at Saratoga Country Club. I thoroughly enjoyed my time working with Tyler and came to know him as a truly valuable asset to our team. Tyler quickly took on lead roles and was respected by myself and coworkers for his commitment to each task. His creativeness was always welcome in ways to better programs. When given an assignement/task there was never doubt that Tyler would not give it his all and exceeded expectations. Myself, staff and members were all fortunate to work with Tyler."
+					/>
+				</div>
+			</main>
+		</>
+	);
 }

@@ -24,12 +24,49 @@ export default function About({ education }: { education: Education[] }) {
 
       <main className="container" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
         <section className="about-hero">
-          <div className="content-wrap">
-            <h1 className="gradient-text">My Journey</h1>
-            <p className="lead-text">
-              From the innovation hub of Silicon Valley to the dynamic business landscape of Texas,
-              my journey represents a unique blend of West Coast tech culture and Southern business acumen.
-            </p>
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="gradient-text">My Journey</h1>
+              <p className="lead-text">
+                From the innovation hub of Silicon Valley to the dynamic business landscape of Texas,
+                my journey represents a unique blend of West Coast tech culture and Southern business acumen.
+              </p>
+            </div>
+            <div className="hero-image">
+              <img 
+                src="/full-body-pat-neff.png" 
+                alt="Tyler Robinson at Pat Neff Hall, Baylor University" 
+                className="profile-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-section">
+          <h2 className="section-title">Let's Connect</h2>
+          <div className="contact-grid">
+            <div className="contact-card card-gradient">
+              <div className="contact-icon">📞</div>
+              <h3>Phone</h3>
+              <p className="contact-info">(330) 803-4207</p>
+              <span className="contact-label">Work</span>
+            </div>
+            
+            <div className="contact-card card-gradient">
+              <div className="contact-icon">💼</div>
+              <h3>LinkedIn</h3>
+              <a href="https://linkedin.com/in/your-profile" className="contact-link" target="_blank" rel="noopener noreferrer">
+                Connect with me
+              </a>
+            </div>
+
+            <div className="contact-card card-gradient">
+              <div className="contact-icon">✉️</div>
+              <h3>Email</h3>
+              <a href="mailto:your.email@example.com" className="contact-link">
+                Send me an email
+              </a>
+            </div>
           </div>
         </section>
 

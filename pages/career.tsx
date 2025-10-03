@@ -65,6 +65,16 @@ export default function Career() {
 			</Head>
 
 			<main className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
+				<div className="career-hero" style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
+					<img
+						src="/profile-photo.PNG"
+						alt="Tyler Robinson Headshot"
+						className="career-portrait"
+						style={{ borderRadius: '50%', width: '150px', height: '150px', marginRight: '1.5rem' }}
+					/>
+					<h1 className="section-title">Career Overview</h1>
+				</div>
+
 				<h1 className="section-title">Success Stories</h1>
 				<div className="career-grid">
 					{successStories.map((story, index) => (

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "continental",
+    "company": "Continental ContiTech",
+    "role": "OEM Sales Manager — USA South",
+    "startDate": "2020-06",
+    "endDate": "Present",
+    "location": "Dallas, TX",
+    "summary": "Lead OEM sales, strategy, and account growth across the southern United States. Focused on consultative selling, partnership development, and cross-functional delivery.",
+    "highlights": [
+      "Managed strategic OEM relationships and increased region revenue by double-digits.",
+      "Led cross-functional teams to deliver multi-million dollar contracts on schedule.",
+      "Implemented account planning processes that improved forecast accuracy and win rate."
+    ]
+  },
+  {
+    "id": "previous-role",
+    "company": "ExampleTech",
+    "role": "Senior Solutions Engineer",
+    "startDate": "2017-02",
+    "endDate": "2020-05",
+    "location": "Austin, TX",
+    "summary": "Built technical relationships with enterprise clients, translated product capabilities into business outcomes, and supported pre-sales activities.",
+    "highlights": [
+      "Delivered technical demonstrations and POCs that converted high-value prospects.",
+      "Authored best-practice guides adopted by field engineering teams.",
+      "Reduced POC time-to-value by 30% through automation and templating."
+    ]
+  }
+]

@@ -9,7 +9,7 @@ export default function Navbar() {
       }}>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0' }}>
         <div style={{ fontWeight: 700 }}>
-          <Link href="/" style={{ color: 'var(--text)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
+          <Link href="/" className="nav-link" style={{ color: 'var(--text)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
             Tyler Robinson
           </Link>
         </div>

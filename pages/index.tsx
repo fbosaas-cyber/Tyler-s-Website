@@ -31,10 +31,8 @@ export default function Home() {
               </p>
 
               <div style={{ marginTop: '1.5rem' }}>
-                <Link href="/career">
-                  <a className="btn btn-primary">
-                    View career →
-                  </a>
+                <Link href="/career" className="btn btn-primary">
+                  View career →
                 </Link>
               </div>
             </div>

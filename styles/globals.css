@@ -18,6 +18,15 @@
   --gradient-1: #051630;
   --gradient-2: #0A2344;
   --gradient-3: #0D2B54;
+  
+  /* Enhanced mobile-specific design tokens */
+  --mobile-nav-bg: #040C1A;
+  --mobile-nav-border: #4CC2FF;
+  --mobile-nav-glow: 0 0 20px rgba(76,194,255,0.15);
+  --mobile-nav-shadow: 0 4px 20px rgba(0,12,32,0.4);
+  --mobile-nav-active: #5CCAFF;
+  --mobile-nav-separator: rgba(76,194,255,0.2);
+  --mobile-nav-highlight: rgba(76,194,255,0.1);
 }
 
 :root[data-theme="light"] {
@@ -63,7 +72,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Main content wrapper */
+/* Main content wrapper with smooth page transitions */
 #__next {
   position: relative;
   min-height: 100vh;
@@ -72,6 +81,16 @@ html, body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: var(--text);
   padding-top: 4rem; /* Space for fixed navbar */
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+
+/* Performance optimizations for fixed elements */
+.navbar-fixed {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
+  z-index: 1000;
 }
 
 .navbar-fixed {
@@ -88,13 +107,109 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* Mobile-specific navbar styles */
+/* Enhanced mobile navigation styles */
 @media (max-width: 767px) {
   .navbar-fixed {
-    background: var(--nav);
-    border-bottom: 2px solid var(--primary);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background: var(--mobile-nav-bg);
+    border-bottom: 2px solid var(--mobile-nav-border);
+    box-shadow: var(--mobile-nav-shadow), var(--mobile-nav-glow);
+    padding: 0.75rem 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
+
+  /* Container refinements */
+  .navbar-fixed .container {
+    padding: 0.5rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+  }
+
+  /* Brand name styling */
+  .navbar-fixed .nav-link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5rem 0;
+  }
+
+  /* Navigation menu */
+  .navbar-fixed nav ul {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Nav items styling */
+  .navbar-fixed nav ul li {
+    position: relative;
+  }
+
+  .navbar-fixed nav ul li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+  }
+
+  /* Active and hover states */
+  .navbar-fixed nav ul li a:active,
+  .navbar-fixed nav ul li a:hover {
+    color: var(--mobile-nav-active);
+  }
+
+  /* Custom separators */
+  .navbar-fixed nav ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 12px;
+    background: var(--mobile-nav-separator);
+    border-radius: 1px;
+  }
+
+  /* Touch feedback */
+  .navbar-fixed nav ul li a:active {
+    transform: scale(0.97);
+  }
+
+  /* Active page indicator */
+  .navbar-fixed nav ul li a.active {
+    color: var(--primary);
+    position: relative;
+  }
+
+  .navbar-fixed nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--mobile-nav-border);
+    border-radius: 1px;
+    box-shadow: 0 0 8px var(--mobile-nav-border);
+  }
+}
 }
 
 /* Add scroll behavior */

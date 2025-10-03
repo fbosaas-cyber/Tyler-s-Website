@@ -14,7 +14,43 @@ type CareerEntry = {
   skills?: string[]
 }
 
-export default function Career({ entries }: { entries: CareerEntry[] }) {
+type Education = {
+  school: string
+  degree: string
+  major?: string
+  startDate: string
+  endDate: string
+  activities?: string[]
+  description?: string
+  skills?: string[]
+  grade?: string
+  type?: string
+}
+
+type Certification = {
+  name: string
+  issuer: string
+}
+
+type Recommendation = {
+  author: string
+  position: string
+  date: string
+  relationship: string
+  text: string
+}
+
+export default function Career({ 
+  entries,
+  education,
+  certifications,
+  recommendations 
+}: { 
+  entries: CareerEntry[]
+  education: Education[]
+  certifications: Certification[]
+  recommendations: Recommendation[]
+}) {
   return (
     <>
       <Head>
@@ -46,7 +82,8 @@ export default function Career({ entries }: { entries: CareerEntry[] }) {
           </div>
         </section>
 
-        <div style={{ marginTop: '2rem' }} className="career-grid">
+        <h2 className="section-title">Experience</h2>
+        <div className="career-grid">
           {entries.map((e) => (
             <article key={e.id} className="career-card">
               <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -80,6 +117,44 @@ export default function Career({ entries }: { entries: CareerEntry[] }) {
             </article>
           ))}
         </div>
+
+
+
+        {recommendations.length > 0 && (
+          <>
+            <h2 className="section-title" style={{ marginTop: '3rem' }}>Recommendations</h2>
+            <div className="career-grid">
+              {recommendations.map((rec, index) => (
+                <article key={index} className="career-card">
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem' }}>
+                    <div style={{ 
+                      width: '48px', 
+                      height: '48px', 
+                      borderRadius: '50%', 
+                      background: 'var(--primary)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      color: 'var(--bg)',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold'
+                    }}>
+                      {rec.author[0]}
+                    </div>
+                    <div>
+                      <div className="career-role">{rec.author}</div>
+                      <div className="muted">{rec.position}</div>
+                    </div>
+                  </div>
+                  <p style={{ fontStyle: 'italic', color: 'var(--muted)' }}>{rec.text}</p>
+                  <div className="muted" style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
+                    {rec.date} • {rec.relationship}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
       </main>
     </>
   )
@@ -101,8 +176,21 @@ function formatYearMonth(ym: string) {
 }
 
 export async function getStaticProps() {
-  const file = path.join(process.cwd(), 'data', 'career.json')
-  const raw = fs.readFileSync(file, 'utf-8')
-  const entries: CareerEntry[] = JSON.parse(raw)
-  return { props: { entries } }
+  const careerFile = path.join(process.cwd(), 'data', 'career.json')
+  const educationFile = path.join(process.cwd(), 'data', 'education.json')
+  
+  const careerRaw = fs.readFileSync(careerFile, 'utf-8')
+  const educationRaw = fs.readFileSync(educationFile, 'utf-8')
+  
+  const entries: CareerEntry[] = JSON.parse(careerRaw)
+  const { education, certifications, recommendations } = JSON.parse(educationRaw)
+  
+  return { 
+    props: { 
+      entries,
+      education,
+      certifications,
+      recommendations
+    } 
+  }
 }

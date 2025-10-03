@@ -1,0 +1,50 @@
+{
+  "education": [
+    {
+      "school": "Baylor University",
+      "degree": "Bachelor of Business Administration - BBA",
+      "major": "Professional Selling, Finance",
+      "startDate": "Aug 2020",
+      "endDate": "May 2024",
+      "activities": [
+        "Vice President & Financial Officer for Baylor Sailing Club",
+        "Homecoming Float & All-University Sing Chairman for Sigma Alpha Epsilon",
+        "Baylor Club Tennis"
+      ],
+      "description": "The Professional Selling program at Baylor University teaches students skills in Business to Business sales through internal and external competitions, and constant workshops with industry experts.",
+      "skills": ["Artificial Intelligence (AI)", "Communication"]
+    },
+    {
+      "school": "The King's Academy, Sunnyvale, CA",
+      "degree": "High School Diploma",
+      "type": "High School/Secondary Diplomas and Certificates",
+      "startDate": "Aug 2013",
+      "endDate": "May 2020",
+      "grade": "6-12",
+      "activities": [
+        "Trumpet Section Leader and Audio/Video Tech Leader for the Knights Brigade Marching Band",
+        "Trumpet Section Leader for the Knights Club Jazz Band Tennis",
+        "Advance-Team for annual service projects"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Accountability & Delegation",
+      "issuer": "Trailhead by Salesforce"
+    },
+    {
+      "name": "Alignment with Your Manager",
+      "issuer": "Trailhead by Salesforce"
+    }
+  ],
+  "recommendations": [
+    {
+      "author": "Diana Moffett",
+      "position": "General Manager at Saratoga Country Club",
+      "date": "September 7, 2022",
+      "relationship": "Diana managed Tyler directly",
+      "text": "It's my absolute pleasure to recommend Tyler Robinson. Tyler and I worked together at Saratoga Country Club. I thoroughly enjoyed my time working with Tyler and came to know him as a truly valuable asset to our team. Tyler quickly took on lead roles and was respected by myself and coworkers for his commitment to each task. His creativeness was always welcome in ways to better programs. When given an assignement/task there was never doubt that Tyler would not give it his all and exceeded expectations. Myself, staff and members were all fortunate to work with Tyler."
+    }
+  ]
+}

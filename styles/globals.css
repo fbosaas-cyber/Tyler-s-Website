@@ -135,5 +135,159 @@ body {
 
 .highlight-list { margin-top: 0.6rem; padding-left: 1.25rem; }
 
-.career-grid { display: grid; gap: 1rem; }
+.career-grid { 
+  display: grid; 
+  gap: 1.5rem; 
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  border-radius: 2px;
+}
+
+/* About page styles */
+.about-hero {
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,12,32,0.3);
+}
+
+.education-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.education-card {
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.school-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.degree-info {
+  margin-bottom: 0.5rem;
+}
+
+.degree {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.major {
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+
+.date-range {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-description {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.activities-section {
+  margin-top: 1.5rem;
+}
+
+.activities-section h4 {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.activities-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.activities-section li {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.activities-section li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+.skills-section {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .career-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  
+  .education-grid {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
 

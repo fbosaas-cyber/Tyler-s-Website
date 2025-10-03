@@ -1,30 +1,144 @@
 [
   {
-    "id": "continental",
-    "company": "Continental ContiTech",
-    "role": "OEM Sales Manager — USA South",
-    "startDate": "2020-06",
+    "id": "continental-oem-manager",
+    "company": "Continental",
+    "role": "OEM Sales Manager",
+    "startDate": "2025-04",
     "endDate": "Present",
-    "location": "Dallas, TX",
-    "summary": "Lead OEM sales, strategy, and account growth across the southern United States. Focused on consultative selling, partnership development, and cross-functional delivery.",
+    "location": "Dallas, Texas, United States · Hybrid",
+    "summary": "In my role as an OEM Sales Manager at Continental in Dallas, Texas, I work with OEMs in the South USA region, focusing on upselling and prospecting actions for ContiTech products.",
     "highlights": [
-      "Managed strategic OEM relationships and increased region revenue by double-digits.",
-      "Led cross-functional teams to deliver multi-million dollar contracts on schedule.",
-      "Implemented account planning processes that improved forecast accuracy and win rate."
-    ]
+      "Manage relationships with OEM customers across the South USA, driving upsell and new business for ContiTech product lines.",
+      "Develop and execute prospecting strategies tailored to OEM requirements and product lifecycles.",
+      "Coordinate cross-functional teams to ensure successful product integration and delivery."
+    ],
+    "skills": ["AI","Sales","Account Management"]
   },
   {
-    "id": "previous-role",
-    "company": "ExampleTech",
-    "role": "Senior Solutions Engineer",
-    "startDate": "2017-02",
-    "endDate": "2020-05",
-    "location": "Austin, TX",
-    "summary": "Built technical relationships with enterprise clients, translated product capabilities into business outcomes, and supported pre-sales activities.",
+    "id": "continental-sales-associate",
+    "company": "Continental",
+    "role": "Sales Associate",
+    "startDate": "2024-11",
+    "endDate": "2025-03",
+    "location": "Dallas, Texas, United States · Hybrid",
+    "summary": "Contributed to strategic sales initiatives by analyzing market trends, developing support materials, and assisting with key account coordination. Provided consultative analysis to internal stakeholders and recommended data-informed strategies to support sales objectives.",
     "highlights": [
-      "Delivered technical demonstrations and POCs that converted high-value prospects.",
-      "Authored best-practice guides adopted by field engineering teams.",
-      "Reduced POC time-to-value by 30% through automation and templating."
-    ]
+      "Supported account teams with market analysis and sales enablement collateral.",
+      "Collaborated with stakeholders to identify business challenges and recommend data-driven solutions."
+    ],
+    "skills": ["Consultative Sales","Market Analysis"]
+  },
+  {
+    "id": "continental-trainee",
+    "company": "Continental",
+    "role": "Sales Associate Trainee",
+    "startDate": "2024-07",
+    "endDate": "2024-11",
+    "location": "Fairlawn, Ohio, United States · On-site",
+    "summary": "Sales Associate Trainee supporting sales operations and learning consultative techniques and internal processes.",
+    "highlights": [
+      "Trained in sales processes and contributed to account coordination.",
+      "Demonstrated skills in problem analysis, time management, and creative problem solving."
+    ],
+    "skills": ["Consulting","Problem Analysis","Time Management","Sales"]
+  },
+  {
+    "id": "hearst-ad-sales",
+    "company": "Hearst",
+    "role": "Advertisement Sales Specialist (Internship)",
+    "startDate": "2023-06",
+    "endDate": "2023-07",
+    "location": "Houston, Texas, United States · On-site",
+    "summary": "Supported digital and specialty advertising sales, increased pipeline, and optimized CRM and sales playbooks for new product rollouts.",
+    "highlights": [
+      "Increased Hearst’s pipeline by $38,000.",
+      "Led prospects through the full sales cycle, including closing deals.",
+      "Wrote a new sales playbook for product rollout and reorganized CRM to increase efficiency."
+    ],
+    "skills": ["Salesforce","Value Selling","Specialty Advertising","AI"]
+  },
+  {
+    "id": "houston-yacht-sailing-instructor",
+    "company": "Houston Yacht Club",
+    "role": "Sailing Instructor",
+    "startDate": "2022-06",
+    "endDate": "2023-06",
+    "location": "Houston, Texas, United States",
+    "summary": "Instructor responsible for teaching sailing skills and safety to members and youth programs.",
+    "highlights": [
+      "Delivered instruction and supervised sailing programs for adults and youth.",
+      "Developed leadership and supervisory skills through program coordination."
+    ],
+    "skills": ["Leadership","Instruction","Safety"]
+  },
+  {
+    "id": "saratoga-tennis-coach",
+    "company": "Saratoga Country Club",
+    "role": "Assistant Tennis Coach",
+    "startDate": "2017-04",
+    "endDate": "2022-02",
+    "location": "Saratoga, California, United States",
+    "summary": "Taught basic and intermediate tennis skills to children aged 6–14, organized sessions, and managed program logistics.",
+    "highlights": [
+      "Planned and executed age-appropriate lesson plans for youth athletes.",
+      "Built communication and team leadership skills through coaching."
+    ],
+    "skills": ["Coaching","Communication","Team Leadership"]
+  },
+  {
+    "id": "camp-counselor",
+    "company": "Seasonal Camps",
+    "role": "Camp Counselor",
+    "startDate": "2017-06",
+    "endDate": "2020-08",
+    "location": "Saratoga, CA",
+    "summary": "Organized and led summer camp programs for children, including sports and activities.",
+    "highlights": ["Managed groups of children aged 7–12 and taught basic tennis skills."],
+    "skills": ["Organization","Leadership","Childcare"]
+  },
+  {
+    "id": "los-altos-food-services",
+    "company": "Los Altos United Methodist Church",
+    "role": "Food Services Assistant",
+    "startDate": "2019-09",
+    "endDate": "2021-08",
+    "location": "Los Altos, California, United States",
+    "summary": "Organized setup, teardown and staff for special events and community meals.",
+    "highlights": ["Coordinated volunteers and managed event logistics."],
+    "skills": ["Event Management","Communication"]
+  },
+  {
+    "id": "media-specialist",
+    "company": "Los Altos United Methodist Church",
+    "role": "Media Specialist",
+    "startDate": "2019-01",
+    "endDate": "2020-08",
+    "location": "Los Altos, California, United States",
+    "summary": "Operated audio and video systems for services and events.",
+    "highlights": ["Managed AV setups for weekly services and special events."],
+    "skills": ["AV Systems","Multimedia"]
+  },
+  {
+    "id": "line-operator-choles",
+    "company": "Collimated Holes, Inc.",
+    "role": "Line Operator",
+    "startDate": "2017-05",
+    "endDate": "2017-08",
+    "location": "Los Gatos, California, United States",
+    "summary": "Packaged precision components used in autonomous vehicle optics.",
+    "highlights": ["Maintained quality control and throughput on the production line."],
+    "skills": ["Manufacturing","Quality Control"]
+  },
+  {
+    "id": "line-operator-zooka",
+    "company": "Zooka Creative",
+    "role": "Line Operator",
+    "startDate": "2017-05",
+    "endDate": "2017-08",
+    "location": "Sunnyvale, California, United States",
+    "summary": "Built custom trade show displays and supported production tasks.",
+    "highlights": ["Worked on custom fabrication and assembly for client installations."],
+    "skills": ["Assembly","Teamwork"]
   }
 ]
+

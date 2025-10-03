@@ -210,7 +210,6 @@ html, body {
     box-shadow: 0 0 8px var(--mobile-nav-border);
   }
 }
-}
 
 /* Add scroll behavior */
 @media (min-width: 768px) {
@@ -240,7 +239,11 @@ html, body {
 }
 
 .container {
-  @apply max-w-5xl mx-auto px-6;
+  max-width: 64rem; /* 5xl = 64rem */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* px-6 = 1.5rem */
+  padding-right: 1.5rem;
 }
 
 /* Career page styles */
@@ -259,8 +262,9 @@ html, body {
 }
 
 .career-card {
-  @apply bg-surface p-6 rounded-xl;
   background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+  padding: 1.5rem;
+  border-radius: 0.75rem;
   background-size: 300% 300%;
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
@@ -613,7 +617,9 @@ html, body {
 .gradient-text {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;

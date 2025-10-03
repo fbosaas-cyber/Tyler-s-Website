@@ -1,16 +1,19 @@
 import Link from 'next/link'
-import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   return (
-    <header className="bg-[color:var(--surface)]">
-      <div className="container flex items-center justify-between py-4">
-  <Link href="/" className="font-semibold">Tyler Robinson</Link>
-        <nav className="flex gap-4 items-center">
-          <Link href="/projects" className="text-[color:var(--muted)]">Projects</Link>
-          <Link href="/career" className="text-[color:var(--muted)]">Career</Link>
-          <Link href="/contact" className="text-[color:var(--muted)]">Contact</Link>
-          <ThemeToggle />
+    <header style={{ borderBottom: '1px solid var(--card-border)', background: 'transparent' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0' }}>
+        <div style={{ fontWeight: 700 }}>
+          <Link href="/" className="" style={{ color: 'var(--text)', textDecoration: 'none' }}>Tyler Robinson</Link>
+        </div>
+
+        <nav>
+          <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0, alignItems: 'center' }}>
+            <li><Link href="/career" className="muted">Career</Link></li>
+            <li><Link href="/about" className="muted">About</Link></li>
+            <li><Link href="/contact" className="muted">Contact</Link></li>
+          </ul>
         </nav>
       </div>
     </header>

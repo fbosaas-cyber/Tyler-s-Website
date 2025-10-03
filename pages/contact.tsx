@@ -19,7 +19,7 @@ export default function Contact() {
             </div>
             <div className="hero-image">
               <img 
-                src="/full-body-pat-neff.png" 
+                src="/full-body-patt-neff.png" 
                 alt="Tyler Robinson at Pat Neff Hall, Baylor University" 
                 className="profile-image"
               />

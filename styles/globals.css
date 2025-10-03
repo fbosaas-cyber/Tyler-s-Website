@@ -178,6 +178,8 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--card-shadow);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .profile-image {
@@ -186,6 +188,7 @@ body {
   display: block;
   border-radius: 1rem;
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .hero-image:hover .profile-image {
@@ -404,6 +407,41 @@ body {
   display: grid;
   gap: 2rem;
   margin-top: 2rem;
+}
+
+.interests-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.interest-card {
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.interest-card h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.interest-card p {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.interest-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+  .interests-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 .education-card {

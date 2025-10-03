@@ -22,50 +22,50 @@ export default function About({ education }: { education: Education[] }) {
         <title>About — Tyler Robinson</title>
       </Head>
 
-      <main className="container" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+            <main className="container" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
         <section className="about-hero">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="gradient-text">My Journey</h1>
-              <p className="lead-text">
-                From the innovation hub of Silicon Valley to the dynamic business landscape of Texas,
-                my journey represents a unique blend of West Coast tech culture and Southern business acumen.
-              </p>
-            </div>
-            <div className="hero-image">
-              <img 
-                src="/full-body-pat-neff.png" 
-                alt="Tyler Robinson at Pat Neff Hall, Baylor University" 
-                className="profile-image"
-              />
-            </div>
+          <div className="content-wrap">
+            <h1 className="gradient-text">My Journey</h1>
+            <p className="lead-text">
+              From the innovation hub of Silicon Valley to the dynamic business landscape of Texas,
+              my journey represents a unique blend of West Coast tech culture and Southern business acumen.
+            </p>
           </div>
         </section>
 
-        <section className="contact-section">
-          <h2 className="section-title">Let's Connect</h2>
-          <div className="contact-grid">
-            <div className="contact-card card-gradient">
-              <div className="contact-icon">📞</div>
-              <h3>Phone</h3>
-              <p className="contact-info">(330) 803-4207</p>
-              <span className="contact-label">Work</span>
-            </div>
-            
-            <div className="contact-card card-gradient">
-              <div className="contact-icon">💼</div>
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/your-profile" className="contact-link" target="_blank" rel="noopener noreferrer">
-                Connect with me
-              </a>
+        <section className="content-section">
+          <h2 className="section-title">Beyond Business</h2>
+          <div className="interests-grid">
+            <div className="interest-card card-gradient">
+              <h3>Maritime Exploration</h3>
+              <p>
+                My passion for sailing spans over a decade, beginning with small boat navigation in middle school 
+                and culminating in a transformative three-month Pacific Ocean expedition in 2021. This journey not 
+                only honed my leadership and decision-making skills but also led to achieving Rescue Scuba certification. 
+                These maritime experiences have instilled in me a deep appreciation for strategic planning, risk 
+                management, and adaptability – skills that translate seamlessly into the business world.
+              </p>
             </div>
 
-            <div className="contact-card card-gradient">
-              <div className="contact-icon">✉️</div>
-              <h3>Email</h3>
-              <a href="mailto:your.email@example.com" className="contact-link">
-                Send me an email
-              </a>
+            <div className="interest-card card-gradient">
+              <h3>Culinary Exploration</h3>
+              <p>
+                As an avid culinary enthusiast, I approach cooking as both an art and a learning opportunity. 
+                My interest extends beyond mere recipe execution to understanding diverse cultural traditions 
+                and techniques. This passion for exploring global cuisines reflects my broader approach to 
+                business: embracing diversity, paying attention to detail, and continuously seeking opportunities 
+                for innovation and cross-cultural understanding.
+              </p>
+            </div>
+
+            <div className="interest-card card-gradient">
+              <h3>Sporting Connections</h3>
+              <p>
+                Tennis and golf serve as more than recreational pursuits in my professional life. These sports 
+                embody the perfect blend of individual skill development and relationship building. I value these 
+                activities as platforms for meaningful networking, understanding that success in business, like 
+                in sports, comes from a combination of personal excellence and strong professional relationships.
+              </p>
             </div>
           </div>
         </section>
